@@ -4,38 +4,13 @@
 
 <template>
 
-<div class="border red-background div-height div-width" >
-  <div class="header-border header-size border-bottom border-black" style="width: 100%; height: 50px">
-    
+<div class="border red-background rounded" style="width: 300px; height: 500px; ">
+  <div class="header-border header-size border-bottom border-black d-flex justify-content-center" style="width: 100%; height: 50px">    
+    <h2> 
+      Games List
+    </h2>
   </div>
-
+  <div v-for="(item, index) in $store.state.games" :key="index">{{ item.name }} {{ item.publisher }} {{ item.rating }}</div>
 </div>
 
 </template>
-
-<style scoped>
-/* .header-border{ */
-  /* border-bottom: 1px  solid black; 
-} */
-
-/* .header-size{
-  height: 50px;
-  width: 100%; 
-} */
-.red-text {
-  color: red;
-}
-
-.div-height{
-  height: 500px;
-}
-.div-width{
-  width: 300px;
-}
-
-/* .border{
-  border: 1px solid black;
-  border-radius: 5px;
-} */
-
-</style>

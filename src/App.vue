@@ -1,16 +1,36 @@
-<script setup>
+<script  >
+  import GamesList from './components/GamesList.vue'
+  import AddGame from './components/AddGame.vue'
+  import Navbar from './components/Navbar.vue'
+ 
+  const routes ={
+    '/': GamesList, 
+    '/addgame': AddGame
+  }
+
+
+  export default {
+    data() {
+        return {
+            currentPath: window.location.hash
+        };
+    },
+    computed: {
+        currentView() {
+            return routes[this.currentPath.slice(1) || "/"] || NotFound;
+        }
+    },
+    mounted() {
+        window.addEventListener("hashchange", () => {
+            this.currentPath = window.location.hash;
+        });
+    },
+    components: { Navbar }
+}
 
 </script>
 
 <template>
-
-<div class="border red-background rounded" style="width: 300px; height: 500px; ">
-  <div class="header-border header-size border-bottom border-black d-flex justify-content-center" style="width: 100%; height: 50px">    
-    <h2> 
-      Games List
-    </h2>
-  </div>
-  <div v-for="(item, index) in $store.state.games" :key="index">{{ item.name }} {{ item.publisher }} {{ item.rating }}</div>
-</div>
-
+  <Navbar/>
+  <component :is="currentView" />
 </template>

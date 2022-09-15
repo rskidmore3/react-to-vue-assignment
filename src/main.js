@@ -1,6 +1,37 @@
+import 'bootstrap/dist/css/bootstrap.css'
 import { createApp } from 'vue'
+import { createStore } from 'vuex'
 import App from './App.vue'
 
-import './assets/main.css'
+const store = createStore({
+    state(){ 
+        return { 
+            games: [
+                {
+                    name: 'game 1', 
+                    publisher: 'trublu games', 
+                    rating: 4
+                },  
+                {
+                    name: 'game 2', 
+                    publisher: 'trublu games', 
+                    rating: 4
+                }, 
+                {
+                    name: 'game 3', 
+                    publisher: 'trublu games', 
+                    rating: 4
+                }
+            ]
+        }
+    }
+})
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(store)
+
+app.mount('#app')
+
+
+import 'bootstrap/dist/js/bootstrap.js'

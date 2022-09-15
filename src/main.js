@@ -26,8 +26,8 @@ import App from './App.vue'
         }
     }, 
     mutations: {
-        addGame(state, someValue){
-            console.log(someValue)
+        addGame(state, myLoad){
+            console.log(myLoad.one)
             this.state.games.push({name: 'from addgame', publisher: 'game pub', rating: 4})
         }
     }

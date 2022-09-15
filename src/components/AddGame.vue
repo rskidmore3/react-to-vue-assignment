@@ -23,23 +23,22 @@
                 // this.v$.$validate()
                 e.preventDefault()
                 // console.log(e.target[1].value)
-                // if(!this.v$.$error){
-                //     alert('Form success')
-                // } else {
-                //     alert("Form failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                // }
+                if(this.v$.$error){
+                    alert('Your missing a few values.')
+                } 
                 // Enter new thing into form 
                 // console.log(event)
                 this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
 
-                console.log(this.$store.state.games)
+                // console.log(this.$store.state.games)
+                this.$refs.anyName.reset();
             
             }
         }
     }
 </script>
 <template>
-<form @submit="submitForm">
+<form @submit="submitForm" ref="anyName" >
     <div class="mb-3">
         <label for="name" class="form-label">Name*</label>
         <input type="text" class="form-control" id="nameOfGame" v-model="name" aria-describedby="nameOfGame">

@@ -19,20 +19,14 @@
             }
         },
         methods: {
-            submitForm(e, state){
-                // this.v$.$validate()
+            submitForm(e, state) {
                 e.preventDefault()
-                // console.log(e.target[1].value)
-                if(this.v$.$error){
-                    alert('Your missing a few values.')
-                } 
-                // Enter new thing into form 
-                // console.log(event)
+                this.v$.$validate()
+                if(!this.v$.$error){} else {
+                    alert("Form failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                }
                 this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
-
-                // console.log(this.$store.state.games)
                 this.$refs.anyName.reset();
-            
             }
         }
     }

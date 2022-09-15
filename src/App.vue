@@ -3,7 +3,7 @@
   import AddGame from './components/AddGame.vue'
   import Navbar from './components/Navbar.vue'
  
-  const routes ={
+  const routes = {
     '/': GamesList, 
     '/addgame': AddGame
   }
@@ -11,6 +11,7 @@
 
   export default {
     data() {
+      
         return {
             currentPath: window.location.hash
         };

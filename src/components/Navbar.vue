@@ -1,10 +1,3 @@
-
-<script >
-    //   import GamesList from './components/GamesList.vue'
-
-</script>
-
-
 <template>
   <nav class="navbar navbar-expand-lg bg-light mb-1">
     <div class="container-fluid">
@@ -26,8 +19,3 @@
     </div>
     </nav>
 </template>
-
-
-<style scoped>
-
-</style>

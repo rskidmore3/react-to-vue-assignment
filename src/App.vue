@@ -1,8 +1,7 @@
 <script  >
-  // import Navbar from './components/Navbar.vue'
   import GamesList from './components/GamesList.vue'
   import AddGame from './components/AddGame.vue'
-import Navbar from './components/Navbar.vue'
+  import Navbar from './components/Navbar.vue'
  
   const routes ={
     '/': GamesList, 
@@ -28,14 +27,10 @@ import Navbar from './components/Navbar.vue'
     },
     components: { Navbar }
 }
- 
+
 </script>
 
 <template>
-
   <Navbar/>
- 
   <component :is="currentView" />
-
-
 </template>

@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import { createStore } from 'vuex'
 import App from './App.vue'
 
-const store = createStore({
+ const store = createStore({
     state(){ 
         return { 
             games: [
@@ -23,6 +23,12 @@ const store = createStore({
                     rating: 4
                 }
             ]
+        }
+    }, 
+    mutations: {
+        addGame(state, someValue){
+            console.log(someValue)
+            this.state.games.push({name: 'from addgame', publisher: 'game pub', rating: 4})
         }
     }
 })

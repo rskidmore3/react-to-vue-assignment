@@ -12,8 +12,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#/addgame">Add Game</a>
-            </li>
-            
+            </li>    
         </ul>
         </div>
     </div>

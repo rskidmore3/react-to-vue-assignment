@@ -8,16 +8,19 @@ import App from './App.vue'
         return { 
             games: [
                 {
+                    id: 'trugam3',
                     name: 'game 1', 
                     publisher: 'trublu games', 
                     rating: 4
                 },  
                 {
+                    id: 'trugam4',
                     name: 'game 2', 
                     publisher: 'trublu games', 
                     rating: 4
                 }, 
                 {
+                    id: 'trugam1', 
                     name: 'game 3', 
                     publisher: 'trublu games', 
                     rating: 4
@@ -27,8 +30,15 @@ import App from './App.vue'
     }, 
     mutations: {
         addGame(state, game){
-            this.state.games.push({name: game.name, publisher: game.publisher, rating: game.rating})
-            
+            const id = game.name.split(' ').join('').slice(0,3) + game.publisher.split(' ').join('').slice(0,3) + String(Math.floor(Math.random() * 10))
+            this.state.games.push({ id: id, name: game.name, publisher: game.publisher, rating: game.rating})
+        }, 
+        updateGame(state, game){
+             const index = this.state.games.findIndex(object => {
+                return object.id === game.id;
+              });
+             this.state.games[index] = {id: game.id, name: game.name, 
+                publisher: game.publisher, rating: game.rating}
         }
     }
 })

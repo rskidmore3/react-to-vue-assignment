@@ -5,7 +5,7 @@
  
   const routes = {
     '/': GamesList, 
-    '/addgame': AddGame
+    '/addgame': AddGame,    
   }
 
 

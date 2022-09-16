@@ -39,6 +39,13 @@ import App from './App.vue'
               });
              this.state.games[index] = {id: game.id, name: game.name, 
                 publisher: game.publisher, rating: game.rating}
+        }, 
+        deleteRecord(state, id){
+            console.log(id)
+            const gameIndex = this.state.games.findIndex(game => {
+                return game.id === id; 
+            })
+           this.state.games.splice(gameIndex,1)
         }
     }
 })

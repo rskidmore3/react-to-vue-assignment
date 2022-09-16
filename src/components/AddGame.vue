@@ -8,7 +8,6 @@
                 name: '', 
                 publisher: '', 
                 rating: 0
-
             }
         }, 
         validations(){

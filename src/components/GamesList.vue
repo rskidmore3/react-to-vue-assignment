@@ -22,6 +22,9 @@ const routes = {
             sendUpdateToAddForm(e) {
               this.editingID = e.target.id
             }, 
+            deleteRecord(e){
+               this.$store.commit('deleteRecord', e.target.id)
+            },
             submitForm(e, state) {
                 e.preventDefault()
                 const recordID = e.target[3].id
@@ -36,7 +39,6 @@ const routes = {
             }
         }
     }
-    
 </script>
 
 
@@ -72,7 +74,9 @@ const routes = {
     <div :class="editingID === item.id ? 'd-none' : ''">      
       <span >{{ item.name }}</span> <span>{{ item.publisher }}</span> <span>{{ item.rating }}</span> {{ ' '}}
        <button  @click="sendUpdateToAddForm" :id="item.id">Edit</button>
+       <button  @click="deleteRecord" :id="item.id">Delete</button>
     </div>
+    
   
 </div>
 

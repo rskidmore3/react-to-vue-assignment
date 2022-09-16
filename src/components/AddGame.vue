@@ -22,11 +22,13 @@
             submitForm(e, state) {
                 e.preventDefault()
                 this.v$.$validate()
-                if(!this.v$.$error){} else {
+                if(!this.v$.$error){
+                  this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
+                  this.$refs.anyName.reset();
+                } else {
                     alert("Form failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                 }
-                this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
-                this.$refs.anyName.reset();
+           
             }
         }
     }

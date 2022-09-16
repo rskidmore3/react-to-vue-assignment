@@ -8,17 +8,19 @@ const routes = {
 
 
   export default {
-      
+    data(){
+      return {
+        editingID: ''
+      }
+    },
       computed: {
             currentView() {
                 return routes[this.currentPath.slice(1) || "/"] || NotFound;
             }
         },
         methods: {
-            sendUpdateToAddForm() {
-              // console.log(e.target.id)
-               return this.currentPath = 'http://localhost:5173/#/addgame'
-
+            sendUpdateToAddForm(e) {
+              this.editingID = e.target.id
             }
         }
     }
@@ -38,8 +40,12 @@ const routes = {
 
     <span >{{ item.name }}</span> <span>{{ item.publisher }}</span> <span>{{ item.rating }}</span> {{ ' '}}
     <a style="cursor: pointer" :href="'#/addgame/'+item.id">Edit</a>
-    <span style="cursor: pointer" @click="sendUpdateToAddForm">Change route</span>
+    <span style="cursor: pointer" @click="sendUpdateToAddForm" :id="item.id">Change route</span>
+    <span :class="editingID === item.id ? 'text-warning' : 'text-danger'">hello</span>
+
   </div>
+  
+ 
 </div>
 
 </template>

@@ -21,6 +21,20 @@ const routes = {
         methods: {
             sendUpdateToAddForm(e) {
               this.editingID = e.target.id
+            }, 
+            submitForm(e, state) {
+                e.preventDefault()
+                // this.v$.$validate()
+
+                // if(!this.v$.$error){
+                //   this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
+                //   this.$refs.anyName.reset();
+                // } else {
+                //     alert("Form failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                // }
+           
+
+                console.log(e.target[3].id)
             }
         }
     }
@@ -38,14 +52,34 @@ const routes = {
   </div>
   <div v-for="(item, index) in $store.state.games" :key="index">
 
-    <span >{{ item.name }}</span> <span>{{ item.publisher }}</span> <span>{{ item.rating }}</span> {{ ' '}}
-    <a style="cursor: pointer" :href="'#/addgame/'+item.id">Edit</a>
-    <span style="cursor: pointer" @click="sendUpdateToAddForm" :id="item.id">Change route</span>
-    <span :class="editingID === item.id ? 'text-warning' : 'text-danger'">hello</span>
+    <!-- Make form here -->
+    <form :class="editingID === item.id ? '' : 'd-none'" @submit="submitForm" ref="anyName">
+      <span id="somevalue"></span>
+      <div class="mb-3">
+            <label for="name" class="form-label">Name*</label>
+            <input type="text" class="form-control" id="nameOfGame"  :value="item.name" aria-describedby="nameOfGame">
+        </div>
+        <div class="mb-3">
+            <label for="publisher" class="form-label">Publisher*</label>
+            <input type="text" class="form-control" id="publisher" :value="item.publisher">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Rating*</label>
+            <input type="number" class="form-control" id="rating" :value="item.rating">
+        </div>
+        <button type="submit" class="btn btn-primary" :id='item.id'>Submit</button>
+    </form>
 
-  </div>
+    <!-- Make display form here -->
+    <div :class="editingID === item.id ? 'd-none' : ''">      
+      <span >{{ item.name }}</span> <span>{{ item.publisher }}</span> <span>{{ item.rating }}</span> {{ ' '}}
+      <a style="cursor: pointer" :href="'#/addgame/'+item.id">Edit</a>
+      <span style="cursor: pointer" @click="sendUpdateToAddForm" :id="item.id">Change route</span>
+    </div>
   
- 
+</div>
+
+
 </div>
 
 </template>

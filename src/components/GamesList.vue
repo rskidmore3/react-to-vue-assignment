@@ -1,4 +1,28 @@
 <script>
+  import AddGame from './AddGame.vue'
+
+
+const routes = {
+    '/addgame': AddGame
+  }
+
+
+  export default {
+      
+      computed: {
+            currentView() {
+                return routes[this.currentPath.slice(1) || "/"] || NotFound;
+            }
+        },
+        methods: {
+            sendUpdateToAddForm() {
+              // console.log(e.target.id)
+               return this.currentPath = 'http://localhost:5173/#/addgame'
+
+            }
+        }
+    }
+    
 </script>
 
 
@@ -10,7 +34,12 @@
       Games List
     </h2>
   </div>
-  <div v-for="(item, index) in $store.state.games" :key="index">{{ item.name }} {{ item.publisher }} {{ item.rating }}</div>
+  <div v-for="(item, index) in $store.state.games" :key="index">
+
+    <span >{{ item.name }}</span> <span>{{ item.publisher }}</span> <span>{{ item.rating }}</span> {{ ' '}}
+    <a style="cursor: pointer" :href="'#/addgame/'+item.id">Edit</a>
+    <span style="cursor: pointer" @click="sendUpdateToAddForm">Change route</span>
+  </div>
 </div>
 
 </template>

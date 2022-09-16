@@ -24,17 +24,15 @@ const routes = {
             }, 
             submitForm(e, state) {
                 e.preventDefault()
-                // this.v$.$validate()
+                const recordID = e.target[3].id
+                  this.$store.commit('updateGame', {id: e.target[3].id, 
+                  name: e.target[0].value,
+                  publisher: e.target[1].value,
+                  rating: e.target[2].value,
+                  })
 
-                // if(!this.v$.$error){
-                //   this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
-                //   this.$refs.anyName.reset();
-                // } else {
-                //     alert("Form failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                // }
-           
+                  this.editingID = ''
 
-                console.log(e.target[3].id)
             }
         }
     }
@@ -73,8 +71,7 @@ const routes = {
     <!-- Make display form here -->
     <div :class="editingID === item.id ? 'd-none' : ''">      
       <span >{{ item.name }}</span> <span>{{ item.publisher }}</span> <span>{{ item.rating }}</span> {{ ' '}}
-      <a style="cursor: pointer" :href="'#/addgame/'+item.id">Edit</a>
-      <span style="cursor: pointer" @click="sendUpdateToAddForm" :id="item.id">Change route</span>
+       <button  @click="sendUpdateToAddForm" :id="item.id">Edit</button>
     </div>
   
 </div>

@@ -32,6 +32,13 @@ import App from './App.vue'
         addGame(state, game){
             const id = game.name.split(' ').join('').slice(0,3) + game.publisher.split(' ').join('').slice(0,3) + String(Math.floor(Math.random() * 10))
             this.state.games.push({ id: id, name: game.name, publisher: game.publisher, rating: game.rating})
+        }, 
+        updateGame(state, game){
+             const index = this.state.games.findIndex(object => {
+                return object.id === game.id;
+              });
+             this.state.games[index] = {id: game.id, name: game.name, 
+                publisher: game.publisher, rating: game.rating}
         }
     }
 })

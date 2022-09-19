@@ -33,5 +33,7 @@
 
 <template>
   <Navbar/>
-  <component :is="currentView" />
+  <div class="d-flex justify-content-center">
+      <component :is="currentView" />
+  </div>
 </template>

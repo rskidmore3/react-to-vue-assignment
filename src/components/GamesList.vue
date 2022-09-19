@@ -71,7 +71,7 @@ const routes = {
     </form>
 
     <!-- Make display form here -->
-    <div :class="editingID === item.id ? 'd-none' : ''">      
+    <div :class="editingID === item.id ? 'd-none' : ''" style="margin-left: 5px">      
       <div class="h3 w-100 overflow-auto">{{ item.name }}</div> 
       <div class="d-flex flex-row justify-content-between w-100" >
         <div class="w-50">

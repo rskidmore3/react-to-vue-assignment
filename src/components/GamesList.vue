@@ -10,7 +10,11 @@ const routes = {
   export default {
     data(){
       return {
-        editingID: ''
+        editingID: '',
+        currentGamesViewStart: 11, 
+        currentGamesViewEnd: 21, 
+
+        
       }
     },
       computed: {
@@ -36,7 +40,28 @@ const routes = {
 
                   this.editingID = ''
 
+            }, 
+            changeGamesViewCount(number){
+              
+              if(number === 2){
+                this.currentGamesViewStart= 11;
+                 this.currentGamesViewEnd= 21; 
+                 console.log('2 triggered')
+              }
+
+              if(number === 1){
+                this.currentGamesViewStart= 0;
+                this.currentGamesViewEnd= 10; 
+                 console.log('1 triggered')
+              }
+              
+              if(number === 3){
+                this.currentGamesViewStart= 22;
+                this.currentGamesViewEnd= 31; 
+                 console.log('3 triggered')
+              }
             }
+
         }
     }
 
@@ -53,7 +78,7 @@ const routes = {
     </h2>
   </div>
   <!-- <div :class="console.log('hey dude the empire is pretty chlll')"></div> -->
-  <div v-for="(item, index) in $store.state.games.slice(0,10)" :key="index">
+  <div v-for="(item, index) in $store.state.games.slice(currentGamesViewStart,currentGamesViewEnd)" :key="index">
 
     <!-- Make form here -->
     <form :class="editingID === item.id ? '' : 'd-none'" @submit="submitForm" ref="anyName">
@@ -84,6 +109,22 @@ const routes = {
 </div>
 
 
+
 </div>
+
+  <!-- {{ $store.state.games.length / }} -->
+  <!-- <div class="d-flex flex-row">
+      <div  v-for="(item, index) in $store.state.games.slice(0,10).length" :key="index" >
+        <div class="p-2">hello</div>
+      </div>
+  
+  </div> -->
+  <div class="d-flex flex-row">
+    <div @click="() => changeGamesViewCount(1)">hello there </div>
+    <div @click="(() => changeGamesViewCount(2))">hello there </div>
+    <div @click="(() => changeGamesViewCount(3))">hello there </div>
+    <div @click="(() => changeGamesViewCount(4))">hello there </div>
+
+  </div>
 
 </template>

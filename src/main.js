@@ -3,34 +3,23 @@ import { createApp } from 'vue'
 import { createStore } from 'vuex'
 import App from './App.vue'
 
+// import Vue from 'vue'
+import { games } from './data'
+
+import JwPagination from 'jw-vue-pagination';
+// Vue.component('jw-pagination', JwPagination);
+
  const store = createStore({
     state(){ 
         return { 
-            games: [
-                {
-                    id: 'trugam3',
-                    name: 'game 1', 
-                    publisher: 'trublu games', 
-                    rating: 4
-                },  
-                {
-                    id: 'trugam4',
-                    name: 'game 2', 
-                    publisher: 'trublu games', 
-                    rating: 4
-                }, 
-                {
-                    id: 'trugam1', 
-                    name: 'game 3', 
-                    publisher: 'trublu games', 
-                    rating: 4
-                }
-            ]
+            games: games
         }
     }, 
     mutations: {
         addGame(state, game){
-            const id = game.name.split(' ').join('').slice(0,3) + game.publisher.split(' ').join('').slice(0,3) + String(Math.floor(Math.random() * 10))
+            console.log(this.state.games.slice(1,3))
+            const id = game.name.split(' ').join('').slice(0,3) + game.publisher.split(' ').join('').slice(0,3)
+             + String(Math.floor(Math.random() * 10))
             this.state.games.push({ id: id, name: game.name, publisher: game.publisher, rating: game.rating})
         }, 
         updateGame(state, game){
@@ -49,6 +38,7 @@ import App from './App.vue'
         }
     }
 })
+
 
 const app = createApp(App)
 

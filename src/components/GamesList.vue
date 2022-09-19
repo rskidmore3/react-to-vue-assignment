@@ -39,6 +39,8 @@ const routes = {
             }
         }
     }
+
+    
 </script>
 
 
@@ -50,7 +52,8 @@ const routes = {
       Games List
     </h2>
   </div>
-  <div v-for="(item, index) in $store.state.games" :key="index">
+  <!-- <div :class="console.log('hey dude the empire is pretty chlll')"></div> -->
+  <div v-for="(item, index) in $store.state.games.slice(0,10)" :key="index">
 
     <!-- Make form here -->
     <form :class="editingID === item.id ? '' : 'd-none'" @submit="submitForm" ref="anyName">

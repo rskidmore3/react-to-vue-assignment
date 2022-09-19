@@ -44,7 +44,7 @@ const routes = {
 
 <template>
     
-<div class="border red-background rounded" style="width: 300px; height: 500px; ">
+<div class="border rounded " style="width: 300px; height: fit-content; ">
   <div class="header-border header-size border-bottom border-black d-flex justify-content-center" style="width: 100%; height: 50px">    
     <h2> 
       Games List
@@ -54,7 +54,7 @@ const routes = {
 
     <!-- Make form here -->
     <form :class="editingID === item.id ? '' : 'd-none'" @submit="submitForm" ref="anyName">
-      <span id="somevalue"></span>
+      
       <div class="mb-3">
             <label for="name" class="form-label">Name*</label>
             <input type="text" class="form-control" id="nameOfGame"  :value="item.name" aria-describedby="nameOfGame">
@@ -72,9 +72,19 @@ const routes = {
 
     <!-- Make display form here -->
     <div :class="editingID === item.id ? 'd-none' : ''">      
-      <span >{{ item.name }}</span> <span>{{ item.publisher }}</span> <span>{{ item.rating }}</span> {{ ' '}}
-       <button  @click="sendUpdateToAddForm" :id="item.id">Edit</button>
-       <button  @click="deleteRecord" :id="item.id">Delete</button>
+      <div class="h3 w-100 overflow-auto">{{ item.name }}</div> 
+      <div class="d-flex flex-row justify-content-between w-100" >
+        <div class="w-50">
+          <div class="w-100 overflow-auto">Publisher: {{ item.publisher }}</div> 
+          <div class="w-100 overflow-auto">Rating: {{ item.rating }}</div>
+        </div> 
+        <div class="d-flex w-50 gap-3">
+          <!-- Edit and Delete buttons -->
+          <button  class='border-0 p-y-1 rounded' style="height: 30px; background-color: #F06C9B; " @click="deleteRecord" :id="item.id">Delete</button>
+          <button  class='border-0 p-y-1 rounded' style="height: 30px; background-color: #96C9DC; " @click="sendUpdateToAddForm" :id="item.id">Edit</button>
+        </div>
+
+        </div>
     </div>
     
   

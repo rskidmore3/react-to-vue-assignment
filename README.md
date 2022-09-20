@@ -1,29 +1,38 @@
-# react-to-vue-assignment
+# React to Vue Challenge 
 
-This template should help get you started developing with Vue 3 in Vite.
+### Install Instructions 
+- `npm install`
+- ` npm run dev`
+------------------------
+## Features 
+- **Add Game:** Form using Bootstap and Vuelidate enters new game to the list. 
+- **Games List:** Shows all games. 
+- **Delete Game:** Removes game from list using button. 
+- **Edit Game:** Change the value of game fields. 
 
-## Recommended IDE Setup
+## Stretch Features 
+- Search for Games 
+- Inline sorting for list columns
+- Hot key to access Games List or Add Game 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## NPM Dependencies
+- Vuelidate 2.0
+- Bootstrap 5.2
 
-## Customize configuration
+## Component Structure 
+- **App:** Entry point for app
+- **AddGames:** Holds form to add game to list 
+- **GamesList:** Holds list of game
+- **Navbar:** Hold Bootstap Navbar to navigate between pages 
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Font
+I selected Cormorant SC because of its thin and classy look. The obvious choice would have been a digital looking font because of games 8 bit history, but I wanted a library look because this could become a library of games. 
 
-## Project Setup
+## Data Structure 
+- Name: String
+- Publisher: String
+- Rating: Number. A number was the best choice because sorting will be simpler to set up.
 
-```sh
-npm install
-```
+## Wireframe 
+- TODO: Make updated wireframe in figma and post link. Post screen shots 
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```

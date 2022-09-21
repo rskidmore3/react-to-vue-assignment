@@ -33,6 +33,15 @@ I selected Cormorant SC because of its thin and classy look. The obvious choice 
 - Publisher: String
 - Rating: Number. A number was the best choice because sorting will be simpler to set up.
 
+## Design Document
+[Design Document](https://github.com/rskidmore3/react-to-vue-assignment/wiki/Design-Doc)
+
 ## Wireframe 
-- TODO: Make updated wireframe in figma and post link. Post screen shots 
+[Figma](https://www.figma.com/file/BTLVnni09C9DPcNyxWbAQZ/Games-List?node-id=0%3A1)
+
+Desktop Games List
+![Screen Shot 2022-09-21 at 2 03 53 PM](https://user-images.githubusercontent.com/113372365/191610246-ffde7fc5-ee17-4b10-a639-95a14ece87b5.png)
+
+Desktop Add Game
+![Screen Shot 2022-09-21 at 2 04 13 PM](https://user-images.githubusercontent.com/113372365/191610705-ebbda51c-6d74-4e3c-9a83-123e183cea06.png)
 

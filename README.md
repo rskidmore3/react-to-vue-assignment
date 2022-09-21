@@ -33,6 +33,9 @@ I selected Cormorant SC because of its thin and classy look. The obvious choice 
 - Publisher: String
 - Rating: Number. A number was the best choice because sorting will be simpler to set up.
 
+## Design Document
+[Design Document](https://github.com/rskidmore3/react-to-vue-assignment/wiki/Design-Doc)
+
 ## Wireframe 
 [Figma](https://www.figma.com/file/BTLVnni09C9DPcNyxWbAQZ/Games-List?node-id=0%3A1)
 

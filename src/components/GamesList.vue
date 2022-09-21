@@ -1,12 +1,4 @@
 <script>
-  import AddGame from './AddGame.vue'
-
-
-const routes = {
-    '/addgame': AddGame
-  }
-
-
   export default {
     data(){
       return {

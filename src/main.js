@@ -41,7 +41,6 @@ import App from './App.vue'
                 publisher: game.publisher, rating: game.rating}
         }, 
         deleteRecord(state, id){
-            console.log(id)
             const gameIndex = this.state.games.findIndex(game => {
                 return game.id === id; 
             })

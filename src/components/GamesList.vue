@@ -35,6 +35,7 @@
 
 
 <template>
+  
     
 <div class="border rounded " style="width: 300px; height: fit-content; ">
   <div class="header-border header-size border-bottom border-black d-flex justify-content-center" style="width: 100%; height: 50px">    
@@ -73,7 +74,10 @@
         <div class="d-flex w-50 gap-3">
           <!-- Edit and Delete buttons -->
           <button  class='border-0 p-y-1 rounded' style="height: 30px; background-color: #F06C9B; " @click="deleteRecord" :id="item.id">Delete</button>
-          <button  class='border-0 p-y-1 rounded' style="height: 30px; background-color: #96C9DC; " @click="sendUpdateToAddForm" :id="item.id">Edit</button>
+          <!-- <button  class='border-0 p-y-1 rounded' style="height: 30px; background-color: #96C9DC; " @click="sendUpdateToAddForm" :id="item.id">Edit</button> -->
+          <a class='border-0 p-y-1 rounded' href="#/game/edit">Edit</a>
+
+
         </div>
 
         </div>

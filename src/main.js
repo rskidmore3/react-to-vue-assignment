@@ -1,7 +1,29 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
+// import VueRouter from 'vue-router';
+// import  Vue  from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
+
 import App from './App.vue'
+import GamesList from './components/GamesList.vue'
+import AddGame from './components/AddGame.vue'
+
+const routes = [ 
+    {path: '/', component: GamesList}, 
+    {path: '/addgame', component: AddGame}
+]
+
+
+// const router = VueRouter.createRouter({
+//     history: VueRouter.createWebHashHistory(), 
+//     routes, 
+// })
+
+const router = createRouter({
+    history: createWebHistory(), 
+    routes: routes
+})
 
  const store = createStore({
     state(){ 
@@ -49,11 +71,20 @@ import App from './App.vue'
     }
 })
 
+// const app = Vue.createApp({})
+
+// app.use(router)
+
+// app.use(router)
+
+// app.mount('#app')
+
 const app = createApp(App)
+.use(store)
+.use(router)
+.mount('#app')
 
-app.use(store)
 
-app.mount('#app')
 
 
 import 'bootstrap/dist/js/bootstrap.js'

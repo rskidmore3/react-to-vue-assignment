@@ -10,6 +10,9 @@
                 rating: 0
             }
         }, 
+        moumted(){
+            console.log('hello world edit game')
+        },
         validations(){
             return {
                 name: { required }, 
@@ -38,6 +41,7 @@
     }
 </script>
 <template>
+    <h1>Edit game</h1>
 <form @submit="submitForm" ref="anyName" >
     <div class="mb-3">
         <label for="name" class="form-label">Name*</label>

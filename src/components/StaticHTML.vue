@@ -1,14 +1,17 @@
 <template>
-    <div class="d-flex justify-content-center">
+    <div class="justify-content-center">
+
+   
+    <div>
         <div class="mt-3 border d-flex justify-content-between flex-column" style="width: 723px; height: 531px; max-width: 80vw;">
                 <div>
                     <table class="table">
                         <thead>
                         <tr class="right-border text-center">
-                            <th scope="col">Name <span>↑ ↓</span></th><!-- TODO add arrow icons -->
-                            <th scope="col">Publisher <span>↑ ↓</span></th><!-- TODO add arrow icons -->
-                            <th scope="col">Rating <span>↑ ↓</span></th><!-- TODO add arrow icons -->
-                            <th scope="col">Actions</th>
+                            <th scope="col">Name <span>↑ ↓</span></th>
+                            <th scope="col">Publisher <span>↑ ↓</span></th> 
+                            <th scope="col">Rating <span>↑ ↓</span></th> 
+                            <th scope="col"><div>Actions</div><div> TODO add arrow icons</div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,6 +43,23 @@
             <div>{{ '<< < 12345678 > >> '}}</div>
         </div>
     </div>
+
+    <div>
+        <form ref="anyName" style="width: 300px;">
+            <div class="mb-3">
+                <input type="text" class="form-control border-0 border-bottom" id="nameOfGame"  placeholder="Name" v-model="name"  aria-describedby="nameOfGame">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control border-0 border-bottom" id="publisher" placeholder="Publisher"  v-model='publisher'>
+            </div>
+            <div class="mb-3">
+                <input type="number" class="form-control border-0 border-bottom" id="rating"  placeholder="Rating" v-model="rating">
+            </div>
+            <button type="submit" class="bg-transparent px-4" style="border-radius: 30px; border-width: 1px;">Submit</button>
+        </form>
+    </div>
+    </div>
+
 </template>
 
 <script>

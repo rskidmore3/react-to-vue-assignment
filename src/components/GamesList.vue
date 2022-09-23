@@ -15,12 +15,12 @@
               this.editingID = e.target.id
             }, 
             deleteRecord(e){
-               this.$store.commit('deleteRecord', e.target.id)
+               this.$store.dispatch('deleteRecord', e.target.id)
             },
             submitForm(e, state) {
                 e.preventDefault()
                 const recordID = e.target[3].id
-                  this.$store.commit('updateGame', {id: e.target[3].id, 
+                  this.$store.dispatch('updateGame', {id: e.target[3].id, 
                   name: e.target[0].value,
                   publisher: e.target[1].value,
                   rating: e.target[2].value,
@@ -34,9 +34,7 @@
 </script>
 
 
-<template>
-
-    
+<template>    
 <div class="border rounded " style="width: 300px; height: fit-content; ">
   <div class="header-border header-size border-bottom border-black d-flex justify-content-center" style="width: 100%; height: 50px">    
     <h2> 
@@ -75,9 +73,6 @@
           <!-- Edit and Delete buttons -->
           <button  class='border-0 p-y-1 rounded' style="height: 30px; background-color: #F06C9B; " @click="deleteRecord" :id="item.id">Delete</button>
           <button  class='border-0 p-y-1 rounded' style="height: 30px; background-color: #96C9DC; " @click="sendUpdateToAddForm" :id="item.id">Edit</button>
-          <!-- <a class='border-0 p-y-1 rounded' href="#/game/edit">Edit</a> -->
-
-
         </div>
 
         </div>

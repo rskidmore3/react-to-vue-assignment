@@ -33,20 +33,19 @@
 }
 </script>
 <template>
-    <button @click="toMakeDispatch"> use dispatch </button>
-<form @submit="submitForm" ref="anyName" >
-    <div class="mb-3">
-        <label for="name" class="form-label">Name*</label>
-        <input type="text" class="form-control" id="nameOfGame" v-model="name" aria-describedby="nameOfGame">
-    </div>
-    <div class="mb-3">
-        <label for="publisher" class="form-label">Publisher*</label>
-        <input type="text" class="form-control" id="publisher" v-model='publisher'>
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Rating*</label>
-        <input type="number" class="form-control" id="rating" v-model="rating">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <form @submit="submitForm" ref="anyName" >
+        <div class="mb-3">
+            <label for="name" class="form-label">Name*</label>
+            <input type="text" class="form-control" id="nameOfGame" v-model="name" aria-describedby="nameOfGame">
+        </div>
+        <div class="mb-3">
+            <label for="publisher" class="form-label">Publisher*</label>
+            <input type="text" class="form-control" id="publisher" v-model='publisher'>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Rating*</label>
+            <input type="number" class="form-control" id="rating" v-model="rating">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </template>

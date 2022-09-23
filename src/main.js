@@ -1,24 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
-// import VueRouter from 'vue-router';
-// import  Vue  from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import App from './App.vue'
 import GamesList from './components/GamesList.vue'
 import AddGame from './components/AddGame.vue'
+import StaticList from './components/StaticList.vue'
+import StaticForm from './components/StaticForm.vue'
 
 const routes = [ 
     {path: '/', component: GamesList}, 
-    {path: '/addgame', component: AddGame}
+    {path: '/addgame', component: AddGame},
+    {path: '/staticlist', component: StaticList},
+    {path: '/staticform', component: StaticForm}
 ]
-
-
-// const router = VueRouter.createRouter({
-//     history: VueRouter.createWebHashHistory(), 
-//     routes, 
-// })
 
 const router = createRouter({
     history: createWebHistory(), 

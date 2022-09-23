@@ -52,6 +52,8 @@ export default {
 </script>
 
 <style>
+    /* Ben likes classes declared  here  */
+    /* TODO move the width and hiehhts here  */
 
 .right-border th {
     border-right: 1px solid black; 

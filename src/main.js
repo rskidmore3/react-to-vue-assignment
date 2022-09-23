@@ -46,8 +46,8 @@ const router = createRouter({
             ]
         }
     }, 
-    actions: {
- 
+    actions: {  // would be called getWhatever 
+        //would  be called getAddGame 
         addGame(context, game) {
             const id = game.name.split(' ').join('').slice(0,3) + game.publisher.split(' ').join('').slice(0,3) + String(Math.floor(Math.random() * 10))
            context.commit('addGame', { id: id, name: game.name, publisher: game.publisher, rating: game.rating})  
@@ -59,8 +59,8 @@ const router = createRouter({
             context.commit('updateGame', game)
         }
     },
-    mutations: {
-
+    mutations: { // would be call setWhatever
+        //would be called setGame 
         addGame(state, game){
              this.state.games.push({ id: game.id, name: game.name, publisher: game.publisher, rating: game.rating})
         }, 

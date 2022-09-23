@@ -25,7 +25,8 @@
                 e.preventDefault()
                 this.v$.$validate()
                 if(!this.v$.$error){
-                  this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value}) 
+                    this.$store.dispatch('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
+                //   this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value}) 
                   //  TODO change this to dispatch 
                   // TODO change input to use v-model 
                   this.$refs.anyName.reset();
@@ -33,11 +34,15 @@
                     alert("Form failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                 }
            
+            },
+            toMakeDispatch(){
+                this.$store.dispatch('testFunc')
             }
-        }
+        }, 
     }
 </script>
 <template>
+    <button @click="toMakeDispatch"> use dispatch </button>
 <form @submit="submitForm" ref="anyName" >
     <div class="mb-3">
         <label for="name" class="form-label">Name*</label>

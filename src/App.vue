@@ -1,6 +1,4 @@
 <script>
-  import GamesList from './components/GamesList.vue'
-  import AddGame from './components/AddGame.vue'
   import Navbar from './components/Navbar.vue'
 
 

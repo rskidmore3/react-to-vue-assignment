@@ -19,7 +19,11 @@
                     <!-- <a class="nav-link" href="#/addgame">Add Game</a> -->
                 </li>    
                 <li class="nav-item">
-                    <router-link to="/statichtml" class="nav-link">Static HTML</router-link>
+                    <router-link to="/staticlist" class="nav-link">Static List</router-link>
+                    <!-- <a class="nav-link" href="#/addgame">Add Game</a> -->
+                </li>    
+                <li class="nav-item">
+                    <router-link to="/staticform" class="nav-link">Static Form</router-link>
                     <!-- <a class="nav-link" href="#/addgame">Add Game</a> -->
                 </li>    
             </ul>

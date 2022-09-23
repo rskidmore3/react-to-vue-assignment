@@ -19,27 +19,18 @@
         },
         methods: {
             submitForm(e, state) {
-                console.log(this.name)
-                console.log(this.publisher)
-                console.log(this.rating)
                 e.preventDefault()
                 this.v$.$validate()
                 if(!this.v$.$error){
-                    this.$store.dispatch('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
-                //   this.$store.commit('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value}) 
-                  //  TODO change this to dispatch 
-                  // TODO change input to use v-model 
+                  this.$store.dispatch('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
                   this.$refs.anyName.reset();
                 } else {
-                    alert("Form failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                    alert("All fields are required, friend.")
                 }
-           
-            },
-            toMakeDispatch(){
-                this.$store.dispatch('testFunc')
-            }
+        
         }, 
     }
+}
 </script>
 <template>
     <button @click="toMakeDispatch"> use dispatch </button>

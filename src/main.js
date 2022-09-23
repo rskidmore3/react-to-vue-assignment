@@ -80,20 +80,10 @@ const router = createRouter({
     }
 })
 
-// const app = Vue.createApp({})
-
-// app.use(router)
-
-// app.use(router)
-
-// app.mount('#app')
-
 const app = createApp(App)
 .use(store)
 .use(router)
 .mount('#app')
-
-
 
 
 import 'bootstrap/dist/js/bootstrap.js'

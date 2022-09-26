@@ -15,18 +15,18 @@
                 name: { required }, 
                 publisher: { required }, 
                 rating: { required }
-            }
+            }            
         },
         methods: {
             submitForm(e, state) {
                 e.preventDefault()
                 this.v$.$validate()
                 if(!this.v$.$error){
-                  this.$store.dispatch('addGame', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
+                  this.$store.dispatch('setGameInitial', {name: e.target[0].value, publisher: e.target[1].value, rating: e.target[2].value})
                   this.$refs.anyName.reset();
                 } else {
                     alert("All fields are required, friend.")
-                }
+                }   
         
         }, 
     }

@@ -14,13 +14,13 @@
             sendUpdateToAddForm(e) {
               this.editingID = e.target.id
             }, 
-            deleteRecord(e){
-               this.$store.dispatch('deleteRecord', e.target.id)
+            deleteRecord(e){ // !!!! set name is only used inside store. This method does not follow that naming convention. 
+               this.$store.dispatch('setGameDelete', e.target.id)
             },
             submitForm(e, state) {
                 e.preventDefault()
                 const recordID = e.target[3].id
-                  this.$store.dispatch('updateGame', {id: e.target[3].id, 
+                  this.$store.dispatch('setGameUpdate', {id: e.target[3].id, 
                   name: e.target[0].value,
                   publisher: e.target[1].value,
                   rating: e.target[2].value,
